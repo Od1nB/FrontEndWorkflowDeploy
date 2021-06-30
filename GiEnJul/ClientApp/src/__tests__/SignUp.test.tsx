@@ -4,27 +4,19 @@ import { MemoryRouter } from 'react-router-dom';
 
 import ReactDOM from "react-dom";
 import SignUp from "../routes/registerGiver/SignUp";
-import LocationGiver from "../routes/registerGiver/LocationGiver";
-
-test('null', () => {
-    const n = null;
-    expect(n).toBeNull();
-    expect(n).toBeDefined();
-    expect(n).not.toBeUndefined();
-    expect(n).not.toBeTruthy();
-    expect(n).toBeFalsy();
-  });
+// import Adapter from "enzyme-adapter-react-16";
+// import { shallow, configure } from "enzyme";
 
 describe('SignUp registraion test', () => {
-    
+
     let container: HTMLDivElement;
 
-    beforeEach(()=> {
+    beforeEach(() => {
         container = document.createElement('div');
         document.body.appendChild(container);
         ReactDOM.render(
             <MemoryRouter>
-                <SignUp/>
+                <SignUp />
             </MemoryRouter>, container)
     })
 
@@ -33,15 +25,34 @@ describe('SignUp registraion test', () => {
         container.remove();
     })
 
-    it('SignUp page renders' , () => {
+    it('SignUp page renders', () => {
         const inputs = container.querySelectorAll('div');
         expect(inputs).toBeTruthy();
     })
 
-    it('have two buttons' , () => {
+    it('have two buttons', () => {
         const buttons = container.querySelectorAll('button')
         expect(buttons).toHaveLength(2);
     })
 
+    it('renders a location input', () => {
+        expect(container.querySelectorAll("#location-input").length).toEqual(1)
+    })
+
+    it('renders a fullname input', () => {
+        expect(container.querySelectorAll("#fullname").length).toEqual(1)
+    })
+
+    it('renders a email input', () => {
+        expect(container.querySelectorAll("#email").length).toEqual(1)
+    })
+
+    it('renders a phoneNumber input', () => {
+        expect(container.querySelectorAll("#phoneNumber").length).toEqual(1)
+    })
+
+    it('renders a familyType input', () => {
+        expect(container.querySelectorAll("#familyType-input").length).toEqual(1)
+    })
 });
 

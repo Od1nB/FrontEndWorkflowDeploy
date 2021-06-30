@@ -43,6 +43,7 @@ const LocationGiver: React.FC<Props> = ({ nextStep, prevStep, handleLocationChan
             value={values.familyType ? values.familyType: ""}
             onChange={handleLocationChange}
             label="Familiesammensetning*"
+            id='familyType-input'
             errorMessages={['Vennligst velg familiesammensetning']}
           >
             {options.map(x =>

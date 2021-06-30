@@ -63,6 +63,7 @@ const ContactInfo: React.FC<Props> = ({ nextStep, prevStep, handlefullnameChange
             >
                 <TextValidator
                     autoFocus
+                    id="fullname"
                     label="Fult navn*"
                     variant="outlined"
                     margin="normal"
@@ -75,6 +76,7 @@ const ContactInfo: React.FC<Props> = ({ nextStep, prevStep, handlefullnameChange
                     errorMessages={['Vennligst skriv inn ditt navn']}
                 />
                 <TextValidator
+                    id="email"
                     error={errors.errorEmail}
                     helperText={errors.errorEmailText}
                     label="Epost*"
@@ -89,6 +91,7 @@ const ContactInfo: React.FC<Props> = ({ nextStep, prevStep, handlefullnameChange
                     fullWidth
                 />
                 <TextValidator
+                    id="phoneNumber"
                     error={errors.errorPhone}
                     helperText={errors.errorPhoneText}
                     label="Telefonnummer*"
