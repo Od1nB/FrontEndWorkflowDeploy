@@ -87,7 +87,7 @@ const LocationGiver: React.FC<Props> = ({ nextStep, prevStep, handleLocationChan
         <Grid container spacing={2} justify="center" className={classes.submit}>
           <Grid item>
             <Route render={({ history }) => (
-              <Button variant="contained" onClick={() => { history.push('/') }}>Tilbake</Button>)} />
+              <Button id='return' variant="contained" onClick={() => { history.push('/') }}>Tilbake</Button>)} />
           </Grid>
           <Grid item>
             <Button variant="contained" type="submit">Neste</Button>
