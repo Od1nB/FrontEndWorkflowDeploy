@@ -4,8 +4,10 @@ import { MemoryRouter } from 'react-router-dom';
 
 import ReactDOM from "react-dom";
 import SignUp from "../routes/registerGiver/SignUp";
-// import Adapter from "enzyme-adapter-react-16";
-// import { shallow, configure } from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import { shallow, configure } from "enzyme";
+import { render, fireEvent, waitFor, screen } from '@testing-library/react'
+import '@testing-library/jest-dom/extend-expect'
 
 describe('SignUp registraion test', () => {
 
@@ -39,20 +41,33 @@ describe('SignUp registraion test', () => {
         expect(container.querySelectorAll("#location-input").length).toEqual(1)
     })
 
-    it('renders a fullname input', () => {
-        expect(container.querySelectorAll("#fullname").length).toEqual(1)
-    })
+    // it('retruns to home page', () => {
+    //     fireEvent.click(document.querySelectorAll('#return'))
+    // })
 
-    it('renders a email input', () => {
-        expect(container.querySelectorAll("#email").length).toEqual(1)
-    })
+    // it('renders a fullname input', () => {
+    //     expect(container.querySelectorAll("#fullname").length).toEqual(1)
+    // })
 
-    it('renders a phoneNumber input', () => {
-        expect(container.querySelectorAll("#phoneNumber").length).toEqual(1)
-    })
+    // it('renders a email input', () => {
+    //     expect(container.querySelectorAll("#email").length).toEqual(1)
+    // })
 
-    it('renders a familyType input', () => {
-        expect(container.querySelectorAll("#familyType-input").length).toEqual(1)
-    })
+    // it('renders a phoneNumber input', () => {
+    //     expect(container.querySelectorAll("#phoneNumber").length).toEqual(1)
+    // })
+
+    // it('renders a familyType input', () => {
+    //     expect(container.querySelectorAll("#familyType-input").length).toEqual(1)
+    // })
+
+    // describe("App", () => {
+    //     it("renders correctly", () => {
+    //       shallow(<SignUp />);
+    //     })
+    
+    // });
 });
+
+
 

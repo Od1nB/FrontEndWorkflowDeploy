@@ -35,5 +35,5 @@ describe('App test', () => {
         expect(inputs).toBeTruthy();
     })
 
-}) 
+});
 
