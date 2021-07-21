@@ -30,7 +30,8 @@ jobs:
     steps:
       - name: Deploy to Azure
         uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
-        source-path: /ClientApp/build
-        sas-url: ${{secrets.DEPLOY_SAS_URL}}
+        with:
+          source-path: ./ClientApp/build
+          sas-url: ${{secrets.DEPLOY_SAS_URL}}
 
 
