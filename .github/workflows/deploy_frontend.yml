@@ -2,16 +2,21 @@ name: Build and Deploy Frontend to Azure
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - './ClientApp/**'
 
 jobs:
   build:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ./ClientApp
 
       - name: Build
         run: npm run build
@@ -20,13 +25,11 @@ jobs:
       - name: Tests
         run: npm test --watchAll=false
         working-directory: ./ClientApp
-
-  upload-and-deploy-azure:
-    runs-on: ubuntu-latest
-      steps:
-        - name: Deploy to Azure
-          uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
-          source-path: /ClientApp/build
+        
+      - name: Deploy to Azure
+        uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
+        with:
+          source-path: ./ClientApp/build
           sas-url: ${{secrets.DEPLOY_SAS_URL}}
 
 
