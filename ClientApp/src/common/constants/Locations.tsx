@@ -1,9 +1,12 @@
 async function getLocations() {
-    const locations = await fetch('/api/event/ActiveLocations')
-        .then(response => response.json())
-        .then(data => { return data });
+  const api: string = process.env.REACT_APP_API_URL!;
+  const locations = await fetch(api + "/event/ActiveLocations")
+    .then((response) => response.json())
+    .then((data) => {
+      return data;
+    });
 
-    return locations;
+  return locations;
 }
 
 export default getLocations;
