@@ -2,6 +2,10 @@ name: Build and Deploy Frontend to Azure
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'FrontEndWorkflowDeploy/ClientApp/**'
 
 jobs:
   build:
