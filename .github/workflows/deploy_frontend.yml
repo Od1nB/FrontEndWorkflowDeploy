@@ -25,10 +25,7 @@ jobs:
       - name: Tests
         run: npm test --watchAll=false
         working-directory: ./ClientApp
-
-  upload-and-deploy-azure:
-    runs-on: ubuntu-latest
-    steps:
+        
       - name: Deploy to Azure
         uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
         with:
