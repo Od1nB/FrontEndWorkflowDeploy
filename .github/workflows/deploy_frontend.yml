@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'FrontEndWorkflowDeploy/ClientApp/**'
+      - './ClientApp/**'
 
 jobs:
   build:
@@ -16,6 +16,7 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+        working-directory: ./ClientApp
 
       - name: Build
         run: npm run build
