@@ -5,7 +5,7 @@ on:
   push:
     branches: [main]
     paths:
-      - './ClientApp/**'
+      - './FrontEnd/**'
 
 jobs:
   build:
@@ -16,20 +16,20 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
-        working-directory: ./ClientApp
+        working-directory: ./FrontEnd
 
       - name: Build
         run: npm run build
-        working-directory: ./ClientApp
+        working-directory: ./FrontEnd
       
       - name: Tests
         run: npm test --watchAll=false
-        working-directory: ./ClientApp
+        working-directory: ./FrontEnd
         
       - name: Deploy to Azure
         uses: TravisSpomer/deploy-to-azure-storage@v1.4.0
         with:
-          source-path: ./ClientApp/build
+          source-path: ./FrontEnd/build
           sas-url: ${{secrets.DEPLOY_SAS_URL}}
 
 
