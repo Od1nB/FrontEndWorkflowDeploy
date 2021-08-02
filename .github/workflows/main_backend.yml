@@ -4,14 +4,14 @@ on:
   push:
     branches: [ master ]
     paths: 
-      - 'GiEnJul/**'
-      - '!GiEnJul/ClientApp/**'
+      - 'BackEnd/**'
+      - '!BackEnd/ClientApp/**'
       
   pull_request:
     branches: [ master ]
     paths: 
-      - 'GiEnJul/**'
-      - '!GiEnJul/ClientApp/**'
+      - 'BackEnd/**'
+      - '!BackEnd/ClientApp/**'
 
   workflow_dispatch:
   
